@@ -2,10 +2,7 @@ package coreservlets;
 
 
 public class Catalog {
-  // This would come from a database in real life.
-  // We use a static table for ease of testing and deployment.
-  // See JDBC chapters for info on using databases in
-  // servlets and JSP pages.
+  // local
   private static CatalogItem[] items =
     { new CatalogItem
       ("hall001",
