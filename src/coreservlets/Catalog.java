@@ -8,6 +8,7 @@ package coreservlets;
  *  &copy; 2003 Marty Hall; may be freely used or adapted.
  */
 
+
 public class Catalog {
   // This would come from a database in real life.
   // We use a static table for ease of testing and deployment.
