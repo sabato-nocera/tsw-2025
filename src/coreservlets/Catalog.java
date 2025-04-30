@@ -2,7 +2,7 @@ package coreservlets;
 
 
 public class Catalog {
-  // local
+  // local + github
   private static CatalogItem[] items =
     { new CatalogItem
       ("hall001",
