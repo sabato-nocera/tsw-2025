@@ -1,11 +1,24 @@
-// Get username from parameters
-String username = request.getParameter("username");
-// Create a statement from database connection
-Statement statement = connection.createStatement();  
-// Create unsafe query by concatenating user defined data with query string
-String query = "SELECT secret FROM Users WHERE (username = '" + username + "' AND NOT role = 'admin')";
-// ... OR ...
-// Insecurely format the query string using user defined data 
-String query = String.format("SELECT secret FROM Users WHERE (username = '%s' AND NOT role = 'admin')", username);
-// Execute query and return the results
-ResultSet result = statement.executeQuery(query);
+String DRIVER = "com.ora.jdbc.Driver";
+String DataURL = "jdbc:db://localhost:5112/users";
+String LOGIN = "admin"; String PASSWORD = "admin123";
+Class.forName(DRIVER);
+//Make connection to DB Connection
+connection = DriverManager.getConnection(DataURL, LOGIN, PASSWORD);
+String Username = request.getParameter("USER"); // From HTTP request
+String Password = request.getParameter("PASSWORD"); // From HTTP request
+int iUserID = -­‐1;
+String sLoggedUser = "";
+String sel = "SELECT User_id, Username FROM USERS WHERE Username = '" +Username + "' AND Password = '" +
+Password + "'";
+Statement selectStatement = connection.createStatement ();
+ResultSet resultSet = selectStatement.executeQuery(sel);
+if (resultSet.next()) {
+iUserID = resultSet.getInt(1);
+sLoggedUser = resultSet.getString(2);
+}
+PrintWriter writer = response.getWriter ();
+if (iUserID >= 0) {
+writer.println ("User logged in: " + sLoggedUser);
+} else {
+writer.println ("Access Denied!");
+}
