@@ -1,13 +1,5 @@
 package coreservlets;
 
-/** A catalog that lists the items available in inventory.
- *  <P>
- *  Taken from Core Servlets and JavaServer Pages 2nd Edition
- *  from Prentice Hall and Sun Microsystems Press,
- *  http://www.coreservlets.com/.
- *  &copy; 2003 Marty Hall; may be freely used or adapted.
- */
-
 
 public class Catalog {
   // This would come from a database in real life.
