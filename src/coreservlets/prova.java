@@ -9,7 +9,6 @@ public class VulnerableApp {
     // CWE-259 / CWE-798: Hardcoded credentials and API key
     private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "password123";
     private static final String API_KEY = "sk-test-abc123xyz";
 
     public static void main(String[] args) {
