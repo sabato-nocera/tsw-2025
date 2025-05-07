@@ -1,4 +1,4 @@
-import sqlite3
+from django.db import connection
 
 def get_user_by_name(value):
     with connection.cursor() as cursor:
